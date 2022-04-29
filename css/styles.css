@@ -418,7 +418,7 @@ footer p{
     margin: 30px 0px 0px 10px;
     font-size: large;
 }
-
+/* Ligne sous le titre */
 .line{
     border: 2px solid #99E2D0;
     width: 45px;
@@ -430,25 +430,37 @@ footer p{
     box-shadow: 5px 5px 8px #aaa;
     border-radius: 20px;
     margin: 10px;
-    padding: 10px;
+    padding: 0px;
+    overflow: hidden;         /* Cache le surplus du check lors de l'animation */      
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.dishes-détails{
+    width: 100%;
+    margin: 15px 0 0 10px;
+    
+    /* Comportement du bloc, lors de l'apparition du check */
+    overflow: hidden;           /* Cache le txt debordantdu cadre */
+    white-space: nowrap;        /* Interdit le retour à la ligne du txt*/
+    text-overflow: ellipsis;    /* Ajoute les ... à la fin du txt tronqué */
 }
 
 .dishes h4 {
-    margin: 0;
-    margin-left: 5px;
     font-size:medium;
+    font-weight: bold;
 }
 
 .details{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.details p {
-    margin: 5px;
     font-size: small;
-        color: rgb(123, 119, 119);
+    color: rgb(123, 119, 119);
 }
+.price {
+    padding: 18px 15px 0 15px;
+    font-weight: bold;
+}
+
 .btn-order{
     text-align: center;
     margin-top: 50px;
@@ -488,4 +500,34 @@ box-shadow: 1px 2px 8px 2px #2d2c2c;
             transform: translateY(0);
             opacity: 1;
           }
+    }
+
+    /* Animation apparition du check dans le choix du plat */
+    .check-box{
+        overflow: hidden;          /* Cache le cadre */
+        width: 0;                  /* Cache le cadre */ 
+        display: flex;
+        align-items: center;
+        background-color: #99E2D0;
+        border-radius: 0px 20px 20px 0px;
+        justify-content: center;
+        transition:1s;
+    }
+
+    .fa-circle-check{
+        
+        margin: auto;
+        font-size: 23px;
+        color: #f2f2f2;
+        transform: rotate(360deg);
+        transition:  1s;
+    }
+
+    .dishes:hover .check-box{
+        width: 70px;                  /* Fait apparaitre le cadre lors du survol*/      
+    }
+
+
+    .dishes:hover .check-box > .fa-circle-check{
+        transform: rotate(0deg);       /* Rotation du check */
     }

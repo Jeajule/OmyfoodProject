@@ -270,13 +270,13 @@ figcaption{
 }
 
 .caption h4{
-    font-size: x-large;
+    font-size: large;
     font-weight:bold;
     margin: 20px 0px 10px 0px;
 }
 
 .caption p{
-    font-size: large;
+    font-size: medium;
     margin: 0px 0px 10px 0px;
 }
 
@@ -450,7 +450,7 @@ footer p{
     text-overflow: ellipsis;    /* Ajoute les ... à la fin du txt tronqué */
 }
 
-.dishes h4 {
+.dishes-détails{
     font-size:medium;
     font-weight: bold;
 }

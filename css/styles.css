@@ -542,7 +542,9 @@ box-shadow: 1px 2px 8px 2px #2d2c2c;
 ****     Mode desktop et tablette   ****
 ****************************************/
 
+/* mise en page pour le responsive - desktop et tablette */
     @media screen and (min-width: 768px){
+        
         .box-main{
             width: 768px;
             margin-left: auto;
@@ -559,6 +561,7 @@ box-shadow: 1px 2px 8px 2px #2d2c2c;
             
         }
 
+        
         .operation, .restaurant, footer{
             display: flex;
             flex-direction: column;
@@ -569,8 +572,12 @@ box-shadow: 1px 2px 8px 2px #2d2c2c;
             width: 650px;
         }
 
-        .links{
-            align-items: center;
-        }
 
-        }
+        /***********************
+        ****     Footer     ****
+        ***********************/
+                .links{
+                    align-items: center;
+                }
+
+                }

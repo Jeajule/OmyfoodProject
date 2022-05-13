@@ -168,6 +168,13 @@ header h1{
 ****   Operation    ****
 ***********************/
 
+.operation{
+padding-top: 40px;
+padding-bottom: 60px;
+
+}
+
+
 .operation h2{
     margin-left: 20px;
 }
@@ -306,7 +313,7 @@ figcaption{
 
     /* masque la checkbox coeur remplie */
     .like-checkbox .checked {
-        display: none;
+        display:none;
     }
 
     /* gestion du comportement de like affiche/masque le coeur plein */
@@ -314,29 +321,43 @@ figcaption{
     .like-checkbox input[type="checkbox"]:checked~.checked {
         display: inline-block;
         color: #fcf9f900;
+        
     }
 
     .like-checkbox input[type="checkbox"]:checked~.unchecked {
         display: none;
     }
 
+   
+
     .like-checkbox input[type="checkbox"], .like-checkbox .checked {
-        animation: like 2s;
+        animation: like .7s;
         animation-fill-mode: forwards;
+        transform: scale(0);
     }
   
+
     @keyframes like {
         0% {
         opacity: 0;
         }
+     
         50% {
-            background: linear-gradient(to bottom, #9356DC, #FF79DA);
-            -webkit-background-clip: text;
             
-        }
-        100% {
+            opacity: 0.5;
             background: linear-gradient(to bottom, #9356DC, #FF79DA);
             -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+      
+       
+        100% {
+            
+            opacity: 1;
+            background: linear-gradient(to bottom, #9356DC, #FF79DA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: scale(1);
         }
     }
 
@@ -372,6 +393,10 @@ footer p{
     margin: 0;
 }
 
+.mention{
+    font-weight: 100;
+}
+
 /********************************
 ****     Pages restaurant    ****
 *********************************/
@@ -397,6 +422,7 @@ footer p{
     margin-top: -50px;
     padding-left:10px ;
     padding-right:10px ;
+    padding-bottom: 10px;
     position: relative;
 }
 
@@ -412,6 +438,8 @@ footer p{
 
 .menu-title h2{
     font-family: "Shrikhand", sans-serif; ;
+    font-size: 28px;
+    font-weight: 200;
     margin: 0;
     
 }
@@ -419,7 +447,8 @@ footer p{
 .menu h3{
     color:rgb(123, 119, 119);
     margin: 30px 0px 0px 10px;
-    font-size: large;
+    font-size: medium;
+    font-weight: 400;
 }
 /* Ligne sous le titre */
 .line{
@@ -452,23 +481,24 @@ footer p{
 }
 
 .dishes-détails{
-    font-size:medium;
-    font-weight: bold;
+    font-size:17px;
+    font-weight: 450;
 }
 
 .details{
-    font-size: small;
-    color: rgb(123, 119, 119);
+    font-size: 14px;
+    font-weight: 300;
 }
 .price {
-    padding: 18px 15px 0 15px;
+    padding: 18px 22px 0 15px;
     font-weight: bold;
 }
 
 .btn-order{
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 80px;
+    background-color: #f6f6f6;
 }
 
 .btn-order button{
@@ -492,8 +522,33 @@ box-shadow: 1px 2px 8px 2px #2d2c2c;
     /* Animation apparition du menu */
 
     .dishes{
-        animation : fadein 2s ;
+        animation : fadein 1s ;
     }
+
+    .cloven1 {
+        animation-delay: 50ms;
+        animation-fill-mode: forwards;
+        opacity: 0;
+      }
+      
+      .cloven2 {
+        animation-delay: 150ms;
+        animation-fill-mode: forwards;
+        opacity: 0;
+      }
+      
+      .cloven3 {
+        animation-delay: 300ms;
+        animation-fill-mode: forwards;
+        opacity: 0;
+      }
+
+      .cloven4 {
+        animation-delay: 450ms;
+        animation-fill-mode: forwards;
+        opacity: 0;
+      }
+
 
     @keyframes fadein{
         from {
@@ -522,13 +577,13 @@ box-shadow: 1px 2px 8px 2px #2d2c2c;
         
         margin: auto;
         font-size: 23px;
-        color: #f2f2f2;
+        color: white;
         transform: rotate(360deg);
         transition:  1s;
     }
 
     .dishes:hover .check-box{
-        width: 70px;                  /* Fait apparaitre le cadre lors du survol*/      
+        width: 100px;                  /* Fait apparaitre le cadre lors du survol*/      
     }
 
 
@@ -580,4 +635,4 @@ box-shadow: 1px 2px 8px 2px #2d2c2c;
                     align-items: center;
                 }
 
-                }
+    }
